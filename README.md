@@ -306,3 +306,53 @@ File error page bisa diunduh dengan cara `wget 10.151.36.202/ERR_ACCESS_DENIED`,
 - kemudian jalankan perintah `ls` untuk mengetahui isi keseluruhan folder tersebut, kemudian cari file bernama `ERR_ACCESS_DENIED`
 - lalu jalankan perintah `rm ERR_ACCESS_DENIED` untuk menghapus file tersebut
 - selanjutnya download file berupa gambar error untuk menggantikan file yg sebelumnya dihapus dengan menjalankan perintah `wget 10.151.36.202/ERR_ACCESS_DENIED`
+
+- untuk **(No. 11)** 
+![403](https://user-images.githubusercontent.com/52326074/99974165-24949a00-2dd3-11eb-8f25-9fd6efa16e09.jpg)
+
+`Note` :
+
+File error page bisa diunduh dengan cara `wget 10.151.36.202/ERR_ACCESS_DENIED`, tidak perlu di extract, cukup `cp -r`
+
+- pertama masuk ke dalam folder error dengan mennjalankan perintah `cd /usr/share/squid/errors/English`
+- kemudian jalankan perintah `ls` untuk mengetahui isi keseluruhan folder tersebut, kemudian cari file bernama `ERR_ACCESS_DENIED`
+- lalu jalankan perintah `rm ERR_ACCESS_DENIED` untuk menghapus file tersebut
+- selanjutnya download file berupa gambar error untuk menggantikan file yg sebelumnya dihapus dengan menjalankan perintah `wget 10.151.36.202/ERR_ACCESS_DENIED`
+
+![ls error_1](https://user-images.githubusercontent.com/62136051/100543376-bba59a00-328a-11eb-8ced-f84fb492a613.JPG)
+![ls error](https://user-images.githubusercontent.com/62136051/100543377-bea08a80-328a-11eb-8112-205944dfb910.JPG)
+
+- kemudian edit file `squid.conf` dengan menjalankan perintah `nano /etc/squid3/squid.conf` yang didalamnya ditambahkan sebagai berikut :
+```
+error_directory /usr/share/squid3/errors/English/
+
+http_access deny all
+```
+<img width="330" alt="Screen Shot 2020-11-29 at 21 26 56" src="https://user-images.githubusercontent.com/62136051/100543391-d1b35a80-328a-11eb-889e-fbc648e8a18d.png">
+
+- kemudian simpan dan restart dengan menjalankan perintah `service squid3 restart`
+
+## 12. Karena sama-sama pelupa, untuk memudahkan maka Anri memiliki ide ketika menggunakan proxy cukup dengan mengetikkan domain janganlupa-ta.yyy.pw dan memasukkan port 8080
+
+`Note` :
+
+Domain janganlupa-ta.yyy.pw -> `janganlupa-ta.a04.pw`
+
+- yang pertama mengatur proxy browser pada device dengan IP Address `10.151.73.43` dan port `8080`
+- lalu pada UML MALANG edit file `named.conf.local` dengan menjalankan perintah `nano /etc/bind/named.conf.local` yang didalamnya sebagai berikut :
+```
+zone "janganlupa-ta.a04.pw" {
+	type master;
+	file "/etc/bind/jarkom/janganlupa-ta.a04.pw";
+};
+```
+![conf local](https://user-images.githubusercontent.com/62136051/100543384-c5c79880-328a-11eb-9b7c-a1de8bac48bf.JPG)
+
+- selanjutnya buat folder `jarkom` dengan menjalankan perintah `mkdir /etc/bind/jarkom`
+- lalu copy file `db.local` dengan menjalankan perintah `cp /etc/bind/db.local /etc/bind/jarkom/janganlupa-ta.a05.pw`
+- kemudian edit file `janganlupa-ta.a05.pw` dengan menjalankan perintah `nano /etc/bind/jarkom/janganlupa-ta.a05.pw`
+
+![bind](https://user-images.githubusercontent.com/62136051/100543386-c8c28900-328a-11eb-8fe5-22314c96d875.JPG)
+
+- Testing
+<img width="1059" alt="Screen Shot 2020-11-29 at 21 12 56" src="https://user-images.githubusercontent.com/62136051/100543401-db3cc280-328a-11eb-8411-2d9b2aacc739.png">
