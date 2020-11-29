@@ -286,6 +286,11 @@ Keterangan:
 - `deny_info http://monta.if.its.ac.id REDIRSITE` untuk memberitahu bahwa deny dengan redirect ke http://monta.if.its.ac.id untuk REDIRSITE
 - `http_reply_access deny REDIRSITE` untuk men-deny google.com terhadap REDIRSITE
 
+- Lakukan `service squid restart` lalu testing
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/100541915-ac6a2080-3279-11eb-852c-d1e1f6cbad41.PNG"></p><br>
+
+<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/100541918-ae33e400-3279-11eb-9309-2c88e195ad66.PNG"></p><br>
+
 - Apabila kita hendak mengakses http://monta.if.its.ac.id diluar jam akses maka akan muncul error page seperti berikut
 <p align="center"><img width="700" src="https://user-images.githubusercontent.com/61299072/100397246-38fac000-307b-11eb-90f5-19f62756f807.PNG"></p><br>
 
