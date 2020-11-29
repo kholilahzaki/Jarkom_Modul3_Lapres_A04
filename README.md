@@ -143,7 +143,7 @@ xterm -T MADIUN -e linux ubd0=MADIUN,jarkom umid=MADIUN eth0=daemon,,,switch3 me
 <p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/100535869-39e44b00-324f-11eb-9f9f-aeae3b1c74dd.PNG"></p><br>
 
 Keterangan:
-- 
+-
 - `SERVERS="10.151.73.44"` menggunakan IP TUBAN karena nantinya akan di relay mengarah ke UML Tuban
 - `INTERFACES="eth1 eth2 eth3"` karena agar Surabaya mendapat peran selayaknya sebagai DHCP Server
 
@@ -251,14 +251,17 @@ http_access allow USERS
 - Lakukan `service squid restart` kemudian hidupkan setting proxy
 <p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/100537285-b714bd80-3259-11eb-96c6-77d184ce041a.PNG"></p><br>
 
--Testing (buka pada mode incognito)
+- Testing (buka pada mode incognito)
 <p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/100537206-fbec2480-3258-11eb-9e79-52d0b41bdae9.PNG"></p><br>
 
 - Lalu untuk melakukan pembatasan waktu akses dapat mengedit file /etc/squid/acl.conf sebagai berikut
 <p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/100537238-35249480-3259-11eb-83c9-8a861293c25c.PNG"></p><br>
+
 Keterangan:
-- 
+-
+
 - `acl AVAILABLE_WORKING time TW 13:00-18:00` agar waktu akses dibatasi dari hari Selasa-Rabu pukkul 13:00-18:00. `T`= Tuesday dan `W`= Wednesday **(No. 8)**
+
 - `acl AVAILABLE_WORKING2 time TWH 21:00-23:59` dan `acl AVAILABLE_WORKING3 time WHF 00:00-09:00` mengapa dibuat seperti itu, karena start pada hari Selasa, Rabu dan Kamis dimulai dari pukul 21:00 dan berakhir di jam 23:29, sedangkan Rabu, Kamis, dan Jumat start dimulai pada jam 00:00 dan berakhir di jam 09:00, jadi ada perbedaan start di hari Selasa dan Jumat. **(No. 9)**
 
 
