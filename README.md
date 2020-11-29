@@ -116,18 +116,18 @@ xterm -T MADIUN -e linux ubd0=MADIUN,jarkom umid=MADIUN eth0=daemon,,,switch3 me
 - Setelah itu ketik bash topologi.sh, dan setelah UML nya terbuka, lakukan setting sysctl seperti pada modul pengenalan UML, lalu setting interface masing-masing UML seperti berikut
 
 **SURABAYA (Router/DHCP Relay)**
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/100535729-25ec1980-324e-11eb-80d7-04a6ad668a3a.PNG"></p><br>
+<p align="center"><img width="700" src="https://user-images.githubusercontent.com/61299072/100535729-25ec1980-324e-11eb-80d7-04a6ad668a3a.PNG"></p><br>
 
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/100535730-25ec1980-324e-11eb-8d70-f1fe1482bfdc.PNG"></p><br>
+<p align="center"><img width="700" src="https://user-images.githubusercontent.com/61299072/100535730-25ec1980-324e-11eb-8d70-f1fe1482bfdc.PNG"></p><br>
 
 **TUBAN (DHCP Server)**
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/100535732-2684b000-324e-11eb-9796-2e6cf7e41648.PNG"></p><br>
+<p align="center"><img width="700" src="https://user-images.githubusercontent.com/61299072/100535732-2684b000-324e-11eb-9796-2e6cf7e41648.PNG"></p><br>
 
 **MALANG (DNS Server)**
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/100535727-24225600-324e-11eb-94e8-09e10ab2cea4.PNG"></p><br>
+<p align="center"><img width="700" src="https://user-images.githubusercontent.com/61299072/100535727-24225600-324e-11eb-94e8-09e10ab2cea4.PNG"></p><br>
 
 **MOJOKERTO (Proxy Server)**
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/100535728-25538300-324e-11eb-8a3a-effd170a0162.PNG"></p><br>
+<p align="center"><img width="700" src="https://user-images.githubusercontent.com/61299072/100535728-25538300-324e-11eb-8a3a-effd170a0162.PNG"></p><br>
 
 - Kemudian ketik `service networking restart` pada setiap UML
 
@@ -140,7 +140,7 @@ xterm -T MADIUN -e linux ubd0=MADIUN,jarkom umid=MADIUN eth0=daemon,,,switch3 me
 - Install isc-dhcp-relay dengan perintah `apt-get install isc-dhcp-relay`
 
 - Setelah itu, buka file /etc/default/isc-dhcp-relay dan edit menjadi
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/100535869-39e44b00-324f-11eb-9f9f-aeae3b1c74dd.PNG"></p><br>
+<p align="center"><img width="700" src="https://user-images.githubusercontent.com/61299072/100535869-39e44b00-324f-11eb-9f9f-aeae3b1c74dd.PNG"></p><br>
 
 Keterangan:
 -
@@ -162,7 +162,7 @@ Keterangan:
 - Install isc-dhcp-server dengan perintah `apt-get install isc-dhcp-server`
 
 - Setelah itu edit file /etc/default/isc-dhcp-server sebagai berikut
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/100536094-d0fdd280-3250-11eb-9d54-5a10de35ed0f.PNG"></p><br>
+<p align="center"><img width="700" src="https://user-images.githubusercontent.com/61299072/100536094-d0fdd280-3250-11eb-9d54-5a10de35ed0f.PNG"></p><br>
 
 Keterangan:
 - 
@@ -170,9 +170,9 @@ Keterangan:
 
 
 - Setelah itu edit file /etc/dhcp/dhcpd.conf seperti berikut
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/100536242-d871ab80-3251-11eb-974b-0887009dcc59.PNG"></p><br>
+<p align="center"><img width="700" src="https://user-images.githubusercontent.com/61299072/100536242-d871ab80-3251-11eb-974b-0887009dcc59.PNG"></p><br>
 
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/100536244-da3b6f00-3251-11eb-9b31-2c8383e373da.PNG"></p><br>
+<p align="center"><img width="700" src="https://user-images.githubusercontent.com/61299072/100536244-da3b6f00-3251-11eb-9b31-2c8383e373da.PNG"></p><br>
 
 Keterangan:
 -
@@ -185,7 +185,7 @@ Keterangan:
 
 
 - Setelah itu simpan dan lakukan restart dhcp server dengan `service isc-dhcp-server restart`
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/100536734-17553080-3255-11eb-9d11-1e4532804f77.PNG"></p><br>
+<p align="center"><img width="700" src="https://user-images.githubusercontent.com/61299072/100536734-17553080-3255-11eb-9d11-1e4532804f77.PNG"></p><br>
 
 - Lakukan testing pada semua UML Klien, tapi ubah terlebih dahulu settingan interface pada setiap UML klien seperti berikut
 <p align="center"><img width="auto" src="https://user-images.githubusercontent.com/61299072/100536773-64d19d80-3255-11eb-8873-41d6126545cd.png"></p><br>
@@ -193,24 +193,24 @@ Keterangan:
 - Setelah itu lakukan `service networking restart` pada setiap UML klien. Dan lakukan testing dengan perintah `cat /etc/resolv.conf` dan `ifconfig` pada setiap UML klien
 
 ###  Gresik (Subnet 1)
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/100536863-fe994a80-3255-11eb-8d68-8f9ab8c81bfc.PNG"></p><br>
+<p align="center"><img width="700" src="https://user-images.githubusercontent.com/61299072/100536863-fe994a80-3255-11eb-8d68-8f9ab8c81bfc.PNG"></p><br>
 
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/100536864-ff31e100-3255-11eb-800a-75a460bee14b.PNG"></p><br>
+<p align="center"><img width="700" src="https://user-images.githubusercontent.com/61299072/100536864-ff31e100-3255-11eb-800a-75a460bee14b.PNG"></p><br>
 
 ### Sidoarjo (Subnet 1)
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/100536867-00fba480-3256-11eb-8d94-1effc4976ba8.PNG"></p><br>
+<p align="center"><img width="700" src="https://user-images.githubusercontent.com/61299072/100536867-00fba480-3256-11eb-8d94-1effc4976ba8.PNG"></p><br>
 
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/100536868-00fba480-3256-11eb-941f-1b26d60201a5.PNG"></p><br>
+<p align="center"><img width="700" src="https://user-images.githubusercontent.com/61299072/100536868-00fba480-3256-11eb-941f-1b26d60201a5.PNG"></p><br>
 
 ### Banyuwangi (Subnet 3)
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/100536858-fc36f080-3255-11eb-966f-653b227ff8a5.PNG"></p><br>
+<p align="center"><img width="700" src="https://user-images.githubusercontent.com/61299072/100536858-fc36f080-3255-11eb-966f-653b227ff8a5.PNG"></p><br>
 
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/100536861-fe00b400-3255-11eb-84d0-ab3cc0aeffda.PNG"></p><br>
+<p align="center"><img width="700" src="https://user-images.githubusercontent.com/61299072/100536861-fe00b400-3255-11eb-84d0-ab3cc0aeffda.PNG"></p><br>
 
 ### Madiun (Subnet 3)
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/100536865-ffca7780-3255-11eb-8b3d-93447048027e.PNG"></p><br>
+<p align="center"><img width="700" src="https://user-images.githubusercontent.com/61299072/100536865-ffca7780-3255-11eb-8b3d-93447048027e.PNG"></p><br>
 
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/100536866-00630e00-3256-11eb-99c0-d9db0c31fdd8.PNG"></p><br>
+<p align="center"><img width="700" src="https://user-images.githubusercontent.com/61299072/100536866-00630e00-3256-11eb-99c0-d9db0c31fdd8.PNG"></p><br>
 
 ### 7, 8, 9, 10, 11
 --------------------------------------------
@@ -249,13 +249,13 @@ http_access allow USERS
 ```
 
 - Lakukan `service squid restart` kemudian hidupkan setting proxy
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/100537285-b714bd80-3259-11eb-96c6-77d184ce041a.PNG"></p><br>
+<p align="center"><img width="700" src="https://user-images.githubusercontent.com/61299072/100537285-b714bd80-3259-11eb-96c6-77d184ce041a.PNG"></p><br>
 
 - Testing (buka pada mode incognito)
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/100537206-fbec2480-3258-11eb-9e79-52d0b41bdae9.PNG"></p><br>
+<p align="center"><img width="700" src="https://user-images.githubusercontent.com/61299072/100537206-fbec2480-3258-11eb-9e79-52d0b41bdae9.PNG"></p><br>
 
 - Lalu untuk melakukan pembatasan waktu akses dapat mengedit file /etc/squid/acl.conf sebagai berikut
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/100537238-35249480-3259-11eb-83c9-8a861293c25c.PNG"></p><br>
+<p align="center"><img width="700" src="https://user-images.githubusercontent.com/61299072/100537238-35249480-3259-11eb-83c9-8a861293c25c.PNG"></p><br>
 
 Keterangan:
 -
@@ -287,9 +287,9 @@ Keterangan:
 - `http_reply_access deny REDIRSITE` untuk men-deny google.com terhadap REDIRSITE
 
 - Lakukan `service squid restart` lalu testing
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/100541915-ac6a2080-3279-11eb-852c-d1e1f6cbad41.PNG"></p><br>
+<p align="center"><img width="700" src="https://user-images.githubusercontent.com/61299072/100541915-ac6a2080-3279-11eb-852c-d1e1f6cbad41.PNG"></p><br>
 
-<p align="center"><img width="500" src="https://user-images.githubusercontent.com/61299072/100541918-ae33e400-3279-11eb-9309-2c88e195ad66.PNG"></p><br>
+<p align="center"><img width="700" src="https://user-images.githubusercontent.com/61299072/100541918-ae33e400-3279-11eb-9309-2c88e195ad66.PNG"></p><br>
 
 - Apabila kita hendak mengakses http://monta.if.its.ac.id diluar jam akses maka akan muncul error page seperti berikut
 <p align="center"><img width="700" src="https://user-images.githubusercontent.com/61299072/100397246-38fac000-307b-11eb-90f5-19f62756f807.PNG"></p><br>
