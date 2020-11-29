@@ -294,3 +294,15 @@ Keterangan:
 - Apabila kita hendak mengakses http://monta.if.its.ac.id diluar jam akses maka akan muncul error page seperti berikut
 <p align="center"><img width="700" src="https://user-images.githubusercontent.com/61299072/100397246-38fac000-307b-11eb-90f5-19f62756f807.PNG"></p><br>
 
+- untuk **(no. 11)** Untuk menandakan bahwa Proxy Server ini adalah Proxy yang dibuat oleh Anri, Bu Meguri meminta Anri untuk mengubah error page default squid menjadi seperti berikut :
+
+![403](https://user-images.githubusercontent.com/52326074/99974165-24949a00-2dd3-11eb-8f25-9fd6efa16e09.jpg)
+
+`Note` :
+
+File error page bisa diunduh dengan cara `wget 10.151.36.202/ERR_ACCESS_DENIED`, tidak perlu di extract, cukup `cp -r`
+
+- pertama masuk ke dalam folder error dengan mennjalankan perintah `cd /usr/share/squid/errors/English`
+- kemudian jalankan perintah `ls` untuk mengetahui isi keseluruhan folder tersebut, kemudian cari file bernama `ERR_ACCESS_DENIED`
+- lalu jalankan perintah `rm ERR_ACCESS_DENIED` untuk menghapus file tersebut
+- selanjutnya download file berupa gambar error untuk menggantikan file yg sebelumnya dihapus dengan menjalankan perintah `wget 10.151.36.202/ERR_ACCESS_DENIED`
